@@ -52,9 +52,9 @@ local redzlib = {
     PlaceName = MarketplaceService:GetProductInfo(game.PlaceId).Name
   },
   Save = {
-    UISize = {380, 550},
+    UISize = {1380, 750},
     TabSize = 200,
-    Theme = "Dark"
+    Theme = "Darker"
   },
   Instances = {},
   Elements = {},
