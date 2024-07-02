@@ -585,13 +585,13 @@ function redzlib:MakeWindow(Configs)
   ConnectSave(ControlSize1, function()
     if not Minimized then
       redzlib.Save.UISize = {MainFrame.Size.X.Offset, MainFrame.Size.Y.Offset}
-      SaveJson("redz library V5.lua", redzlib.Save)
+      SaveJson("Save", redzlib.Save)
     end
   end)
   
   ConnectSave(ControlSize2, function()
     redzlib.Save.TabSize = MainScroll.Size.X.Offset
-    SaveJson("redz library V5.lua", redzlib.Save)
+    SaveJson("Save", redzlib.Save)
   end)
   
   local ButtonsFolder = Create("Folder", TopBar, {
@@ -808,7 +808,7 @@ function redzlib:MakeWindow(Configs)
       end
     end
   end
-  function Window:MakeTab(paste, Configs)
+  function Window:Tab(paste, Configs)
     if type(paste) == "table" then Configs = paste end
     local TName = Configs[1] or Configs.Title or "Tab!"
     local TIcon = Configs[2] or Configs.Icon or ""
@@ -924,7 +924,7 @@ function redzlib:MakeWindow(Configs)
       Container:Destroy()
     end
     
-    function Tab:AddSection(Configs)
+    function Tab:Section(Configs)
       local SectionName = type(Configs) == "string" and Configs or Configs[1] or Configs.Name or Configs.Title or Configs.Section
       
       local SectionFrame = Create("Frame", Container, {
@@ -990,7 +990,7 @@ function redzlib:MakeWindow(Configs)
       end
       return Paragraph
     end
-    function Tab:AddButton(Configs)
+    function Tab:Button(Configs)
       local BName = Configs[1] or Configs.Name or Configs.Title or "Button!"
       local BDescription = Configs.Desc or Configs.Description or ""
       local Callback = Configs[2] or Configs.Callback or function()end
@@ -1038,7 +1038,7 @@ function redzlib:MakeWindow(Configs)
       end
       return Button
     end
-    function Tab:AddToggle(Configs)
+    function Tab:Toggle(Configs)
       local TName = Configs[1] or Configs.Name or Configs.Title or "Toggle"
       local TDesc = Configs.Desc or Configs.Description or ""
       local Default = Configs[2] or Configs.Default or false
@@ -1137,7 +1137,7 @@ function redzlib:MakeWindow(Configs)
       end
       return Toggle
     end
-    function Tab:AddDropdown(Configs)
+    function Tab:Dropdown(Configs)
       local DName = Configs[1] or Configs.Name or Configs.Title or "Dropdown"
       local DDesc = Configs.Desc or Configs.Description or ""
       local DOptions = Configs[2] or Configs.Options or {}
@@ -1459,7 +1459,7 @@ function redzlib:MakeWindow(Configs)
       end
       return Dropdown
     end
-    function Tab:AddSlider(Configs)
+    function Tab:Slider(Configs)
       local SName = Configs[1] or Configs.Name or Configs.Title or "Slider!"
       local SDesc = Configs.Desc or Configs.Description or ""
       local Min = Configs[2] or Configs.MinValue or Configs.Min or 10
@@ -1612,7 +1612,7 @@ function redzlib:MakeWindow(Configs)
       end
 			return Slider
     end
-    function Tab:AddTextBox(Configs)
+    function Tab:Textbox(Configs)
       local TName = Configs[1] or Configs.Name or Configs.Title or "Text Box"
       local TDesc = Configs.Desc or Configs.Description or ""
       local TDefault = Configs[2] or Configs.Default or ""
@@ -1685,7 +1685,7 @@ function redzlib:MakeWindow(Configs)
       end
       return TextBox
     end
-    function Tab:AddDiscordInvite(Configs)
+    function Tab:Discord(Configs)
       local Title = Configs[1] or Configs.Name or Configs.Title or "Discord"
       local Desc = Configs.Desc or Configs.Description or ""
       local Logo = Configs[2] or Configs.Logo or ""
