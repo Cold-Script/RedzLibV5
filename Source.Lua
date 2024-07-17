@@ -31,8 +31,12 @@ local redzlib = {
       ["Color Hub 2"] = Color3.fromRGB(45, 45, 45),
       ["Color Stroke"] = Color3.fromRGB(65, 65, 65),
       ["Color Theme"] = Color3.fromRGB(65, 150, 255),
-      ["Color Text"] = Color3.fromRGB(245, 245, 245),
-      ["Color Dark Text"] = Color3.fromRGB(190, 190, 190)
+      ["Color Dark Text"] = Color3.fromRGB(190, 190, 190),
+spawn(function()
+   while wait() do
+      ["Color Text"] =  Color3.fromRGB(245, 245, 245)
+  end
+end,
     },
     Purple = {
       ["Color Hub 1"] = ColorSequence.new({
